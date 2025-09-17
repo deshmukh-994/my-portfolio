@@ -81,8 +81,8 @@
     <header>
       <div class="id">
         <div class="avatar">
-          <!-- Use your uploaded profile image -->
-          <img src="./assets/profile.png" alt="Pooja Deshmukh">
+          <!-- Use your uploaded profile image at repo root -->
+          <img src="./profile.png" alt="Pooja Deshmukh">
         </div>
         <div>
           <h1>Hi, I’m Pooja Deshmukh 👋</h1>
@@ -164,14 +164,14 @@
       "Distributed-Message-Queue": "Lightweight JavaScript distributed queue supporting producers/consumers, retries, and dead-letter queues. Educational Kafka-like system."
     };
 
-    // Images for each project card
+    // Images are in repo root (same level as index.html)
     const imageMap = {
-      "resume-matcher": "assets/resume-matcher.jpg",
-      "url-shortner": "assets/url-shortner.jpg",
-      "MicroMart": "assets/micromart.jpg",
-      "Distributed-Message-Queue": "assets/message-queue.gif",
-      "cloud-cost-optimizer": "assets/cloud-cost.jpg",
-      "rca-platform": "assets/rca-platform.jpg"
+      "cloud-cost-optimizer": "cloud-cost.jpg",
+      "resume-matcher": "resume-matcher.jpg",
+      "rca-platform": "rca-platform.jpg",
+      "MicroMart": "micromart.jpg",
+      "url-shortner": "url-shortner.jpg",
+      "Distributed-Message-Queue": "message-queue.gif"
     };
 
     async function loadProjects(){
@@ -184,7 +184,7 @@
           const lang = data.language ?? "—";
           const stars = data.stargazers_count ?? 0;
           const forks = data.forks_count ?? 0;
-          const img = imageMap[repo] ?? "";
+          const img = imageMap[repo] || "";
 
           const card = document.createElement("article");
           card.className = "card";
