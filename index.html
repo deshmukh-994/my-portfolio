@@ -51,7 +51,8 @@
       </div>
       <div class="cta">
         <a class="ghost" href="https://github.com/deshmukh-994" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="mailto:youremail@example.com">Contact</a>
+        <a class="ghost" href="https://www.linkedin.com/in/pooja-deshmukh-7ab1271a4/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="mailto:deshmukhpooja922@gmail.com">Contact</a>
       </div>
     </header>
 
@@ -69,16 +70,27 @@
         <span class="chip">Python</span>
         <span class="chip">JavaScript</span>
         <span class="chip">PostgreSQL</span>
+        <span class="chip">Cloud</span>
         <span class="chip">Kafka</span>
-        <span class="chip">Docker · Compose</span>
-        <span class="chip">AWS (EC2, S3, Lambda)</span>
-        <span class="chip">CI/CD · GitHub Actions</span>
+        <span class="chip">Reddis</span>
+        <span class="chip">React js</span>
+        <span class="chip">MongoDB</span>
+        <span class="chip">Kafka</span>
+        <span class="chip">Docker </span>
+        <span class="chip">AWS (IAM,EC2, S3, Lambda,SQS)</span>
+        <span class="chip">CI/CD · Jenkins</span>
         <span class="chip">Grafana · Prometheus</span>
+        <span class="chip">Kibana</span>
+        <span class="chip">TDD</span>
+        <span class="chip">MicroServices</span>
+        <span class="chip">System Dsign . Scalable . Fault-Tolerance . Robust </span>
       </div>
     </section>
 
     <footer>
-      © <span id="y"></span> Pooja Deshmukh · <a href="https://linkedin.com/in/your-handle">LinkedIn</a>
+      © <span id="y"></span> Pooja Deshmukh ·
+    <a href="https://www.linkedin.com/in/pooja-deshmukh-7ab1271a4/" target="_blank" rel="noreferrer">LinkedIn</a>
+  · <a href="mailto:deshmukhpooja922@gmail.com">deshmukhpooja922@gmail.com</a>
     </footer>
   </div>
 
@@ -94,13 +106,34 @@
       "Distributed-Message-Queue"
     ];
 
+    const descMap = {
+    "cloud-cost-optimizer": "Built an anomaly detection and optimization platform for cloud costs using Java, Python, and AWS.
+     It identifies abnormal usage patterns, recommends rightsizing, and visualizes trends via Grafana dashboards.
+     Helps reduce unnecessary spending and improve cost transparency in multi-cloud environments.",
+    "resume-matcher": "A semantic engine that matches resumes against job descriptions using NLP embeddings.
+     Developed a REST API and web UI to score compatibility and highlight skill gaps.
+    Streamlines recruitment by ranking candidates based on relevance and keyword alignment.",
+    "rca-platform": "Root Cause Analysis platform built with Spring Boot and PostgreSQL.
+    Collects logs, parses events, and applies rule-based correlation to detect issues.
+    Helps engineers quickly pinpoint sources of system failures and reduce MTTR.",
+    "MicroMart": "A mini e-commerce backend implemented in Java Spring Boot with JWT authentication.
+    Includes product catalog, order management, and user registration flows.
+    Fully containerized with Docker and deployed with CI/CD pipelines.",
+    "url-shortner": "Lightweight JavaScript-based URL shortener with click-tracking features.
+    Generates short links, stores them persistently, and logs redirection stats.
+    Ideal for analytics use-cases and simplifying long dynamic URLs.",
+    "Distributed-Message-Queue": "Custom-built JavaScript distributed queue system for learning message brokers.
+    Supports producers/consumers, retry handling, and dead-letter queues.
+    Designed as a simplified version of Kafka/RabbitMQ for educational purposes."
+  };
+
     // Build project cards; fetch GitHub metadata (stars/forks/description)
     async function loadProjects(){
       const container = document.getElementById("projects");
       for (const repo of showcase){
         const res = await fetch(`https://api.github.com/repos/${username}/${repo}`);
         const data = await res.json();
-        const desc = data.description ?? "—";
+        const desc = descMap[repo] ?? data.description ?? "—";
         const lang = data.language ?? "—";
         const stars = data.stargazers_count ?? 0;
         const forks = data.forks_count ?? 0;
