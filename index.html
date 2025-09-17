@@ -41,19 +41,14 @@
   header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}
   .id{display:flex;gap:16px;align-items:center}
 
-  /* ✅ Updated avatar with custom profile picture */
+  /* ✅ Avatar now uses an <img> for reliability */
   .avatar{
-    width:72px;
-    height:72px;
-    border-radius:50%;
-    border:2px solid var(--ring);
-    background:#1a2347 url('profile.jpg') center/cover; /* replace with your image */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width:72px;height:72px;border-radius:50%;
+    border:2px solid var(--ring);background:#1a2347;overflow:hidden;
+    transition: transform .3s ease, box-shadow .3s ease;
   }
-  .avatar:hover {
-    transform: scale(1.05);
-    box-shadow:0 0 12px var(--ring);
-  }
+  .avatar img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%}
+  .avatar:hover{transform:scale(1.05);box-shadow:0 0 12px var(--ring)}
 
   h1{margin:0;font-size:32px;letter-spacing:.2px}
   .badges{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted)}
@@ -70,14 +65,16 @@
   .skills{display:flex;flex-wrap:wrap;gap:8px}
   footer{margin-top:28px;padding-top:16px;border-top:1px solid #1b2448;color:var(--muted);font-size:14px}
   @media (max-width:520px){.cta a{display:block;margin:10px 0 0}}
-</style>
+  </style>
 
 </head>
 <body>
   <div class="container">
     <header>
       <div class="id">
-        <div class="avatar"></div>
+        <div class="avatar">
+          <img src="https://github.com/deshmukh-994.png?size=240" alt="Pooja Deshmukh">
+        </div>
         <div>
           <h1>Hi, I’m Pooja Deshmukh 👋</h1>
           <div class="badges">
@@ -90,7 +87,7 @@
       <div class="cta">
         <a class="ghost" href="https://github.com/deshmukh-994" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
         <a class="ghost" href="https://www.linkedin.com/in/pooja-deshmukh-7ab1271a4/" target="_blank" rel="noreferrer" aria-label="LinkedIn">LinkedIn</a>
-        <a href="mailto:deshmukhpooja922@gmail.com" aria-label="Email">Contact</a>
+        <a href="mailto:deshmukhpooja8394@gmail.com" aria-label="Email">Contact</a>
       </div>
     </header>
 
@@ -133,7 +130,7 @@
     <footer>
       © <span id="y"></span> Pooja Deshmukh ·
       <a href="https://www.linkedin.com/in/pooja-deshmukh-7ab1271a4/" target="_blank" rel="noreferrer">LinkedIn</a>
-      · <a href="mailto:deshmukhpooja922@gmail.com">deshmukhpooja922@gmail.com</a>
+      · <a href="mailto:deshmukhpooja8394@gmail.com">deshmukhpooja8394@gmail.com</a>
     </footer>
   </div>
 
