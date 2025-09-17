@@ -1,23 +1,126 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Portfolio - deshmukh-994</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ninad Deshmukh · Portfolio</title>
+  <link rel="preconnect" href="https://api.github.com" />
+  <style>
+    :root{
+      --bg:#0b1020; --card:#101935; --text:#e8ecf8; --muted:#a6b0cf; --brand:#7c9cff; --accent:#1dd1a1;
+      --ring:rgba(124,156,255,.35);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font:16px/1.6 system-ui,Segoe UI,Roboto,Inter,Arial;background:linear-gradient(180deg,#070b18, #0b1020);color:var(--text)}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1080px;margin:auto;padding:32px}
+    header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}
+    .id{display:flex;gap:16px;align-items:center}
+    .avatar{width:72px;height:72px;border-radius:50%;border:2px solid var(--ring);background:#1a2347 url('https://avatars.githubusercontent.com/u/0?v=4') center/cover}
+    h1{margin:0;font-size:32px;letter-spacing:.2px}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted)}
+    .badge{padding:4px 10px;border:1px solid var(--ring);border-radius:999px;background:rgba(255,255,255,.03)}
+    .cta a{display:inline-block;margin-left:12px;padding:10px 14px;border-radius:10px;background:var(--brand);color:#0b1020;font-weight:600}
+    .cta a.ghost{background:transparent;border:1px solid var(--ring);color:var(--text)}
+    section{margin:32px 0}
+    h2{font-size:22px;margin:0 0 12px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+    .card{background:var(--card);padding:18px;border-radius:14px;border:1px solid #1b2448;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    .card h3{margin:0 0 6px;font-size:18px}
+    .meta{display:flex;gap:10px;color:var(--muted);font-size:13px}
+    .chip{padding:2px 8px;border-radius:999px;background:#0e1533;border:1px solid #27326b;color:var(--muted)}
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    footer{margin-top:28px;padding-top:16px;border-top:1px solid #1b2448;color:var(--muted);font-size:14px}
+    @media (max-width:520px){.cta a{display:block;margin:10px 0 0}}
+  </style>
 </head>
 <body>
-<h1>Hi, I’m Pooja Deshmukh 👋</h1>
-<p>Full Stack Developer | Java | Cloud | DevOps</p>
+  <div class="container">
+    <header>
+      <div class="id">
+        <div class="avatar"></div>
+        <div>
+          <h1>Hi, I’m Ninad Deshmukh 👋</h1>
+          <div class="badges">
+            <span class="badge">Full-Stack · Java / Spring</span>
+            <span class="badge">Cloud & DevOps · AWS · Docker</span>
+            <span class="badge">Data · Python</span>
+          </div>
+        </div>
+      </div>
+      <div class="cta">
+        <a class="ghost" href="https://github.com/deshmukh-994" target="_blank" rel="noreferrer">GitHub</a>
+        <a href="mailto:youremail@example.com">Contact</a>
+      </div>
+    </header>
 
-<h2>Projects</h2>
-<ul>
-    <li><a href="https://github.com/deshmukh-994/cloud-cost-optimizer">Cloud Cost Optimizer</a></li>
-    <li><a href="https://github.com/deshmukh-994/resume-matcher">Resume Matcher</a></li>
-    <li><a href="https://github.com/deshmukh-994/rca-platform">RCA Platform</a></li>
-    <li><a href="https://github.com/deshmukh-994/MicroMart">MicroMart</a></li>
-    <li><a href="https://github.com/deshmukh-994/url-shortner">URL Shortener</a></li>
-    <li><a href="https://github.com/deshmukh-994/Distributed-Message-Queue">Distributed Message Queue</a></li>
-</ul>
+    <section>
+      <h2>Selected Projects</h2>
+      <div id="projects" class="grid">
+        <!-- cards injected by JS -->
+      </div>
+    </section>
 
-<h2>Contact</h2>
-<p>Email: youremail@example.com | <a href="https://linkedin.com/in/your-linkedin">LinkedIn</a></p>
+    <section>
+      <h2>Skills</h2>
+      <div class="skills">
+        <span class="chip">Java · Spring Boot</span>
+        <span class="chip">Python</span>
+        <span class="chip">JavaScript</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">Kafka</span>
+        <span class="chip">Docker · Compose</span>
+        <span class="chip">AWS (EC2, S3, Lambda)</span>
+        <span class="chip">CI/CD · GitHub Actions</span>
+        <span class="chip">Grafana · Prometheus</span>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Pooja Deshmukh · <a href="https://linkedin.com/in/your-handle">LinkedIn</a>
+    </footer>
+  </div>
+
+  <script>
+    // --- CONFIG: choose which repos to showcase (order matters) ---
+    const username = "deshmukh-994";
+    const showcase = [
+      "cloud-cost-optimizer",
+      "resume-matcher",
+      "rca-platform",
+      "MicroMart",
+      "url-shortner",
+      "Distributed-Message-Queue"
+    ];
+
+    // Build project cards; fetch GitHub metadata (stars/forks/description)
+    async function loadProjects(){
+      const container = document.getElementById("projects");
+      for (const repo of showcase){
+        const res = await fetch(`https://api.github.com/repos/${username}/${repo}`);
+        const data = await res.json();
+        const desc = data.description ?? "—";
+        const lang = data.language ?? "—";
+        const stars = data.stargazers_count ?? 0;
+        const forks = data.forks_count ?? 0;
+
+        const card = document.createElement("article");
+        card.className = "card";
+        card.innerHTML = `
+          <h3><a href="${data.html_url}" target="_blank" rel="noreferrer">${data.name}</a></h3>
+          <p style="min-height:48px;margin:.25rem 0 .75rem;color:#cdd5f7">${desc}</p>
+          <div class="meta">
+            <span>⭐ ${stars}</span>
+            <span>⑂ ${forks}</span>
+            <span>${lang}</span>
+          </div>
+        `;
+        container.appendChild(card);
+      }
+    }
+    loadProjects().catch(console.error);
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
