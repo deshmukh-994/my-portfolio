@@ -32,31 +32,46 @@
 
   <link rel="preconnect" href="https://api.github.com" />
   <style>
-    :root{ --bg:#0b1020; --card:#101935; --text:#e8ecf8; --muted:#a6b0cf; --brand:#7c9cff; --accent:#1dd1a1; --ring:rgba(124,156,255,.35); }
-    *{box-sizing:border-box}
-    body{margin:0;font:16px/1.6 system-ui,Segoe UI,Roboto,Inter,Arial;background:linear-gradient(180deg,#070b18,#0b1020);color:var(--text)}
-    a{color:var(--brand);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .container{max-width:1080px;margin:auto;padding:32px}
-    header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}
-    .id{display:flex;gap:16px;align-items:center}
-    .avatar{width:72px;height:72px;border-radius:50%;border:2px solid var(--ring);background:#1a2347 url('https://avatars.githubusercontent.com/u/0?v=4') center/cover}
-    h1{margin:0;font-size:32px;letter-spacing:.2px}
-    .badges{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted)}
-    .badge{padding:4px 10px;border:1px solid var(--ring);border-radius:999px;background:rgba(255,255,255,.03)}
-    .cta a{display:inline-block;margin-left:12px;padding:10px 14px;border-radius:10px;background:var(--brand);color:#0b1020;font-weight:600}
-    .cta a.ghost{background:transparent;border:1px solid var(--ring);color:var(--text)}
-    section{margin:32px 0}
-    h2{font-size:22px;margin:0 0 12px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
-    .card{background:var(--card);padding:18px;border-radius:14px;border:1px solid #1b2448;box-shadow:0 8px 24px rgba(0,0,0,.25)}
-    .card h3{margin:0 0 6px;font-size:18px}
-    .meta{display:flex;gap:10px;color:var(--muted);font-size:13px}
-    .chip{padding:2px 8px;border-radius:999px;background:#0e1533;border:1px solid #27326b;color:var(--muted)}
-    .skills{display:flex;flex-wrap:wrap;gap:8px}
-    footer{margin-top:28px;padding-top:16px;border-top:1px solid #1b2448;color:var(--muted);font-size:14px}
-    @media (max-width:520px){.cta a{display:block;margin:10px 0 0}}
-  </style>
+  :root{ --bg:#0b1020; --card:#101935; --text:#e8ecf8; --muted:#a6b0cf; --brand:#7c9cff; --accent:#1dd1a1; --ring:rgba(124,156,255,.35); }
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.6 system-ui,Segoe UI,Roboto,Inter,Arial;background:linear-gradient(180deg,#070b18,#0b1020);color:var(--text)}
+  a{color:var(--brand);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .container{max-width:1080px;margin:auto;padding:32px}
+  header{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}
+  .id{display:flex;gap:16px;align-items:center}
+
+  /* ✅ Updated avatar with custom profile picture */
+  .avatar{
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    border:2px solid var(--ring);
+    background:#1a2347 url('profile.jpg') center/cover; /* replace with your image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .avatar:hover {
+    transform: scale(1.05);
+    box-shadow:0 0 12px var(--ring);
+  }
+
+  h1{margin:0;font-size:32px;letter-spacing:.2px}
+  .badges{display:flex;gap:8px;flex-wrap:wrap;color:var(--muted)}
+  .badge{padding:4px 10px;border:1px solid var(--ring);border-radius:999px;background:rgba(255,255,255,.03)}
+  .cta a{display:inline-block;margin-left:12px;padding:10px 14px;border-radius:10px;background:var(--brand);color:#0b1020;font-weight:600}
+  .cta a.ghost{background:transparent;border:1px solid var(--ring);color:var(--text)}
+  section{margin:32px 0}
+  h2{font-size:22px;margin:0 0 12px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+  .card{background:var(--card);padding:18px;border-radius:14px;border:1px solid #1b2448;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+  .card h3{margin:0 0 6px;font-size:18px}
+  .meta{display:flex;gap:10px;color:var(--muted);font-size:13px}
+  .chip{padding:2px 8px;border-radius:999px;background:#0e1533;border:1px solid #27326b;color:var(--muted)}
+  .skills{display:flex;flex-wrap:wrap;gap:8px}
+  footer{margin-top:28px;padding-top:16px;border-top:1px solid #1b2448;color:var(--muted);font-size:14px}
+  @media (max-width:520px){.cta a{display:block;margin:10px 0 0}}
+</style>
+
 </head>
 <body>
   <div class="container">
