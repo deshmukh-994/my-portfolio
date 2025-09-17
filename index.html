@@ -4,14 +4,37 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Pooja Deshmukh · Portfolio</title>
+
+  <!-- SEO & Social -->
+  <meta name="description" content="Pooja Deshmukh – Full-stack developer (Java/Spring, AWS, Docker). Selected projects and contact."/>
+  <meta property="og:title" content="Pooja Deshmukh · Portfolio">
+  <meta property="og:description" content="Java/Spring, AWS, Docker · Selected Projects">
+  <meta property="og:image" content="https://deshmukh-994.github.io/my-portfolio/og.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.ico">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pooja Deshmukh",
+    "url": "https://deshmukh-994.github.io/my-portfolio/",
+    "sameAs": [
+      "https://github.com/deshmukh-994",
+      "https://www.linkedin.com/in/pooja-deshmukh-7ab1271a4/"
+    ],
+    "jobTitle": "Software Engineer",
+    "skills": "Java, Spring Boot, AWS, Docker, PostgreSQL"
+  }
+  </script>
+
   <link rel="preconnect" href="https://api.github.com" />
   <style>
-    :root{
-      --bg:#0b1020; --card:#101935; --text:#e8ecf8; --muted:#a6b0cf; --brand:#7c9cff; --accent:#1dd1a1;
-      --ring:rgba(124,156,255,.35);
-    }
+    :root{ --bg:#0b1020; --card:#101935; --text:#e8ecf8; --muted:#a6b0cf; --brand:#7c9cff; --accent:#1dd1a1; --ring:rgba(124,156,255,.35); }
     *{box-sizing:border-box}
-    body{margin:0;font:16px/1.6 system-ui,Segoe UI,Roboto,Inter,Arial;background:linear-gradient(180deg,#070b18, #0b1020);color:var(--text)}
+    body{margin:0;font:16px/1.6 system-ui,Segoe UI,Roboto,Inter,Arial;background:linear-gradient(180deg,#070b18,#0b1020);color:var(--text)}
     a{color:var(--brand);text-decoration:none}
     a:hover{text-decoration:underline}
     .container{max-width:1080px;margin:auto;padding:32px}
@@ -50,17 +73,15 @@
         </div>
       </div>
       <div class="cta">
-        <a class="ghost" href="https://github.com/deshmukh-994" target="_blank" rel="noreferrer">GitHub</a>
-        <a class="ghost" href="https://www.linkedin.com/in/pooja-deshmukh-7ab1271a4/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="mailto:deshmukhpooja922@gmail.com">Contact</a>
+        <a class="ghost" href="https://github.com/deshmukh-994" target="_blank" rel="noreferrer" aria-label="GitHub">GitHub</a>
+        <a class="ghost" href="https://www.linkedin.com/in/pooja-deshmukh-7ab1271a4/" target="_blank" rel="noreferrer" aria-label="LinkedIn">LinkedIn</a>
+        <a href="mailto:deshmukhpooja922@gmail.com" aria-label="Email">Contact</a>
       </div>
     </header>
 
     <section>
       <h2>Selected Projects</h2>
-      <div id="projects" class="grid">
-        <!-- cards injected by JS -->
-      </div>
+      <div id="projects" class="grid"></div>
     </section>
 
     <section>
@@ -70,32 +91,38 @@
         <span class="chip">Python</span>
         <span class="chip">JavaScript</span>
         <span class="chip">PostgreSQL</span>
-        <span class="chip">Cloud</span>
-        <span class="chip">Kafka</span>
-        <span class="chip">Reddis</span>
-        <span class="chip">React js</span>
         <span class="chip">MongoDB</span>
+        <span class="chip">Redis</span>
+        <span class="chip">React</span>
         <span class="chip">Kafka</span>
-        <span class="chip">Docker </span>
-        <span class="chip">AWS (IAM,EC2, S3, Lambda,SQS)</span>
-        <span class="chip">CI/CD · Jenkins</span>
-        <span class="chip">Grafana · Prometheus</span>
-        <span class="chip">Kibana</span>
-        <span class="chip">TDD</span>
-        <span class="chip">MicroServices</span>
-        <span class="chip">System Dsign . Scalable . Fault-Tolerance . Robust </span>
+        <span class="chip">Docker · Compose</span>
+        <span class="chip">AWS (IAM, EC2, S3, Lambda, SQS)</span>
+        <span class="chip">CI/CD · GitHub Actions · Jenkins</span>
+        <span class="chip">Grafana · Prometheus · Kibana</span>
+        <span class="chip">System Design · Scalable · Fault-Tolerant · Robust</span>
+        <span class="chip">TDD · Microservices</span>
       </div>
+    </section>
+
+    <section>
+      <h2>Contact Me</h2>
+      <!-- Replace <your-form-id> with your Formspree ID -->
+      <form action="https://formspree.io/f/<your-form-id>" method="POST" class="card" style="margin-top:12px;display:flex;flex-direction:column;gap:10px">
+        <input name="name" placeholder="Your name" required>
+        <input name="_replyto" type="email" placeholder="Your email" required>
+        <textarea name="message" rows="4" placeholder="Message" required></textarea>
+        <button type="submit" style="padding:10px;border-radius:8px;background:var(--brand);color:#0b1020;font-weight:600;cursor:pointer">Send</button>
+      </form>
     </section>
 
     <footer>
       © <span id="y"></span> Pooja Deshmukh ·
-    <a href="https://www.linkedin.com/in/pooja-deshmukh-7ab1271a4/" target="_blank" rel="noreferrer">LinkedIn</a>
-  · <a href="mailto:deshmukhpooja922@gmail.com">deshmukhpooja922@gmail.com</a>
+      <a href="https://www.linkedin.com/in/pooja-deshmukh-7ab1271a4/" target="_blank" rel="noreferrer">LinkedIn</a>
+      · <a href="mailto:deshmukhpooja922@gmail.com">deshmukhpooja922@gmail.com</a>
     </footer>
   </div>
 
   <script>
-    // --- CONFIG: choose which repos to showcase (order matters) ---
     const username = "deshmukh-994";
     const showcase = [
       "cloud-cost-optimizer",
@@ -107,47 +134,41 @@
     ];
 
     const descMap = {
-    "cloud-cost-optimizer": "Anomaly detection & optimization platform for cloud costs using Java, Python, AWS, NodeJS, and Grafana dashboards. Helps track usage patterns and cut waste.",
-    "resume-matcher": "Resume–Job Description matcher using embeddings, REST API + UI. Scores compatibility and highlights skill gaps for faster recruitment decisions.",
-    "rca-platform": "Spring Boot + PostgreSQL based Root Cause Analysis platform. Collects logs, parses events, applies rules to detect issues and reduce MTTR.",
-    "MicroMart": "Mini e-commerce backend built with Java Spring Boot, JWT auth, order management, Dockerized, and deployed via CI/CD pipelines.",
-    "url-shortner": "JavaScript-based URL shortener with persistent storage and click-tracking analytics. Generates and manages short links efficiently.",
-    "Distributed-Message-Queue": "Lightweight JavaScript distributed queue supporting producers/consumers, retries, and dead-letter queues. Educational Kafka-like system."
-  };
+      "cloud-cost-optimizer": "Anomaly detection & optimization platform for cloud costs using Java, Python, AWS, NodeJS, and Grafana dashboards. Helps track usage patterns and cut waste.",
+      "resume-matcher": "Resume–Job Description matcher using embeddings, REST API + UI. Scores compatibility and highlights skill gaps for faster recruitment decisions.",
+      "rca-platform": "Spring Boot + PostgreSQL based Root Cause Analysis platform. Collects logs, parses events, applies rules to detect issues and reduce MTTR.",
+      "MicroMart": "Mini e-commerce backend built with Java Spring Boot, JWT auth, order management, Dockerized, and deployed via CI/CD pipelines.",
+      "url-shortner": "JavaScript-based URL shortener with persistent storage and click-tracking analytics. Generates and manages short links efficiently.",
+      "Distributed-Message-Queue": "Lightweight JavaScript distributed queue supporting producers/consumers, retries, and dead-letter queues. Educational Kafka-like system."
+    };
 
+    async function loadProjects(){
+      const container = document.getElementById("projects");
+      for (const repo of showcase){
+        try{
+          const res = await fetch(`https://api.github.com/repos/${username}/${repo}`);
+          const data = await res.json();
+          const desc = descMap[repo] ?? data.description ?? "—";
+          const lang = data.language ?? "—";
+          const stars = data.stargazers_count ?? 0;
+          const forks = data.forks_count ?? 0;
 
-    // Build project cards; fetch GitHub metadata (stars/forks/description)
-  async function loadProjects() {
-    const container = document.getElementById("projects");
-    for (const repo of showcase) {
-      try {
-        const res = await fetch(`https://api.github.com/repos/${username}/${repo}`);
-        const data = await res.json();
-
-        // Pick description: custom > GitHub repo desc > fallback
-        const desc = descMap[repo] ?? data.description ?? "—";
-        const lang = data.language ?? "—";
-        const stars = data.stargazers_count ?? 0;
-        const forks = data.forks_count ?? 0;
-
-        const card = document.createElement("article");
-        card.className = "card";
-        card.innerHTML = `
-          <h3><a href="${data.html_url}" target="_blank" rel="noreferrer">${data.name}</a></h3>
-          <p style="min-height:60px;margin:.25rem 0 .75rem;color:#cdd5f7">${desc}</p>
-          <div class="meta">
-            <span>⭐ ${stars}</span>
-            <span>⑂ ${forks}</span>
-            <span>${lang}</span>
-          </div>
-        `;
-        container.appendChild(card);
-      } catch (err) {
-        console.error("Error loading repo:", repo, err);
+          const card = document.createElement("article");
+          card.className = "card";
+          card.innerHTML = `
+            <h3><a href="${data.html_url}" target="_blank" rel="noreferrer">${data.name}</a></h3>
+            <p style="min-height:60px;margin:.25rem 0 .75rem;color:#cdd5f7">${desc}</p>
+            <div class="meta">
+              <span>⭐ ${stars}</span>
+              <span>⑂ ${forks}</span>
+              <span>${lang}</span>
+            </div>`;
+          container.appendChild(card);
+        }catch(e){ console.error("Error loading repo:", repo, e); }
       }
     }
-  }
-    loadProjects().catch(console.error);
+
+    loadProjects();
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
