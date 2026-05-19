@@ -1,0 +1,5 @@
+time_ns,signal,value,note
+98.000,tb_top.rst_n,1,reset deassertion
+141.250,dut.u_core.u_pipe.valid_q,X,first x-prop marker after reset release
+143.500,dut.u_core.u_pipe.data_q,1'bx,unknown captured by downstream flop
+180.000,tb_top.scoreboard.compare_fail,1,first visible mismatch

@@ -1,0 +1,13 @@
+name: sample_xprop_reset_gap
+owner: gls-debug
+failure_class_hint: x_propagation
+seed: 88421
+top: tb_top
+tool_mode: mock
+artifacts:
+  vcs_log: vcs.log
+  waveform_markers: waveform_markers.csv
+  spyglass_report: spyglass_rules.csv
+commands:
+  compile: "vcs -full64 -sverilog -debug_access+all -f filelist.f"
+  simulate: "./simv +UVM_TESTNAME=gls_replay_test +ntb_random_seed=88421 +sdfverbose"

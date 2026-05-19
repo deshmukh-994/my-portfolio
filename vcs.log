@@ -1,0 +1,5 @@
+VCS MX simulator mock log
+Seed: 88421
+UVM_INFO @ 100.000 ns: reset deasserted
+UVM_WARNING @ 175.000 ns: scoreboard mismatch observed on axi_rd_data
+UVM_ERROR @ 180.000 ns: X value reached compare path: dut.u_core.u_pipe.valid_q
