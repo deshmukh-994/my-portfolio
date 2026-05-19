@@ -1,9 +1,0 @@
-Metadata-Version: 2.4
-Name: gls-failure-reconstruction-framework
-Version: 0.1.0
-Summary: Reproducible framework to replay and classify GLS debug failures from VCS/SpyGlass-style artifacts.
-Requires-Python: >=3.9
-Requires-Dist: pyyaml>=6.0
-Requires-Dist: rich>=13.0
-Provides-Extra: dev
-Requires-Dist: pytest>=7.0; extra == "dev"
