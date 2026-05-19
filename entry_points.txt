@@ -1,2 +1,0 @@
-[console_scripts]
-gls-replay = gls_replay.cli:main
