@@ -1,4 +1,0 @@
-rule,severity,object_name,description
-RST_UNSYNC,High,dut.u_core.u_pipe.valid_q,reset release is not synchronized for this flop
-UNDRIVEN_NET,High,dut.u_core.u_pipe.flush_n,undriven net may be optimized to X in gate simulation
-WIDTH_CAST,Low,dut.u_core.u_decode.imm,width cast differs between RTL and synthesized netlist
